@@ -1,0 +1,140 @@
+/* =========================
+   The Venditti Bread Co.
+   Elegant Landing Styles
+   ========================= */
+
+/* Theme tokens */
+:root{
+  --bg:#f7f8fb;
+  --ink:#0f172a;
+  --muted:#6b7280;
+  --accent:#111827;
+  --accent-2:#334155;
+  --card:#ffffff;
+  --border:#e5e7eb;
+  --ring:#93c5fd;
+}
+
+/* Base */
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  color:var(--ink);
+  background:var(--bg);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+img{ max-width:100%; display:block; border-radius:12px; }
+
+/* Utilities */
+.wrap{ max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+.center{ text-align:center; }
+.list{ margin: 10px 0 0; padding-left: 18px; color: var(--muted); }
+.cta-row{ display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; }
+
+/* Grid helpers */
+.grid-2{ display:grid; grid-template-columns: 1.1fr 1fr; gap:20px; align-items:center; }
+.grid-3{ display:grid; grid-template-columns: repeat(3,1fr); gap:16px; }
+@media (max-width: 900px){
+  .grid-2{ grid-template-columns:1fr; }
+  .grid-3{ grid-template-columns:1fr; }
+}
+
+/* Buttons */
+.button{
+  display:inline-block;
+  padding:12px 18px;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:600;
+  border:1px solid transparent;
+  transition: transform .05s ease, filter .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+}
+.button:active{ transform: translateY(1px); }
+.button--primary{ background:var(--accent); color:#fff; }
+.button--primary:hover{ filter:brightness(1.05); }
+.button--dark{ background:var(--ink); color:#fff; }
+.button--dark:hover{ filter:brightness(1.05); }
+.button--ghost{ background:#f3f4f6; color:#111827; border-color:#e5e7eb; }
+.button--ghost:hover{ filter:brightness(0.98); }
+
+/* Sections */
+.section{ padding: 40px 0; }
+.section--tinted{ background:#fbfdff; border-top:1px solid #eef2f7; border-bottom:1px solid #eef2f7; }
+.section__title{ margin:0 0 14px; font-size: 24px; font-family: "Playfair Display", serif; }
+
+/* Cards & content blocks */
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:18px;
+  box-shadow: 0 12px 30px rgba(2,6,23,.04);
+}
+.media-card{ margin:0; }
+.media-card img{ border-radius:14px; }
+
+/* Hero */
+.hero{
+  position: relative;
+  background: var(--accent);
+  color:#e5e7eb;
+  min-height: 44vh;
+  display:flex;
+  align-items:center;
+  background-image: var(--hero-img);
+  background-size: cover;
+  background-position: center;
+}
+.hero__scrim{
+  position:absolute; inset:0;
+  background: linear-gradient(180deg, rgba(15,23,42,.15), rgba(15,23,42,.55));
+}
+.hero__inner{
+  position:relative; z-index:2;
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+  padding: 20px 0;
+}
+.hero__brand{ display:flex; align-items:center; gap:14px; }
+.logo{ width:64px; height:64px; border-radius:14px; object-fit:cover; border:2px solid #ffffff33; }
+.hero__title{ margin:0; font-family:"Playfair Display", serif; font-size: 32px; color:#fff; }
+.tagline{ margin:6px 0 0; color:#cbd5e1; }
+
+/* Tiles (Featured breads) */
+.cards-3{ display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; margin-top: 10px; }
+@media (max-width: 900px){ .cards-3{ grid-template-columns: 1fr; } }
+
+.tile{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:14px;
+  overflow:hidden;
+  display:flex; flex-direction:column;
+  box-shadow: 0 8px 24px rgba(2,6,23,.06);
+}
+.tile img{ border-radius: 0; aspect-ratio: 4/3; object-fit: cover; }
+.tile__body{ padding:14px; }
+.tile__body h3{ margin:0 0 6px; font-size: 18px; }
+.tile__body p{ margin:0; color:var(--muted); }
+
+/* Info blocks */
+.info h4{ margin:0 0 6px; font-size:16px; }
+.info p{ margin:0; color:var(--muted); }
+
+/* Footer */
+.site-footer{
+  border-top:1px solid #e8ebf0;
+  margin-top: 26px;
+  padding: 16px 0 26px;
+  color:#9aa3b2;
+  background:#fff;
+}
+.footer__inner{
+  display:flex; align-items:center; justify-content:space-between; gap:10px;
+}
+.footer__nav a{
+  color:#64748b; text-decoration:none; font-weight:600; margin-left:12px;
+}
+.footer__nav a:hover{ color:#111827; }
