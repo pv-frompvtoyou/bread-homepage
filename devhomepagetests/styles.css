@@ -152,3 +152,27 @@ img{max-width:100%;display:block}
 @media (prefers-reduced-motion: reduce){
   .hero__bg, .panel__media{ transform:none !important }
 }
+
+/* Square grid gallery */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.gallery-grid figure {
+  margin: 0;
+  aspect-ratio: 1 / 1; /* keeps squares */
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* crop nicely into square */
+  display: block;
+}
