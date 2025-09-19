@@ -1,154 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>The Venditti Bread Co.</title>
-
-  <!-- Fonts -->
+  <meta name="theme-color" content="#0a0a0a" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-
-  <!-- Styles -->
+  <!-- Keep it system-first like Apple -->
+  <style>
+    /* Inline critical fonts to avoid flashes; full styles are in styles.css */
+    :root { --ink:#0a0a0a; --bg:#fff; }
+    html,body{margin:0;height:100%}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--ink)}
+  </style>
   <link rel="stylesheet" href="styles.css" />
-
-  <!-- Social preview (optional) -->
-  <meta property="og:title" content="The Venditti Bread Co." />
-  <meta property="og:description" content="Step into our warm kitchen. Slow-fermented breads, baked to order." />
-  <meta property="og:image" content="images/kitchen-wide.jpg" />
-  <meta name="theme-color" content="#3b2f2a" />
 </head>
-<body class="theme-cozy">
-  <!-- Accessibility skip -->
-  <a class="skiplink" href="#content">Skip to content</a>
-
-  <!-- Scrolly Kitchen: Layered scene -->
-  <header class="scene" aria-label="Warm kitchen scene">
-    <!-- Layer stack uses sticky containers for iOS-friendly parallax -->
-    <div class="scene__stack">
-      <!-- Back wall / kitchen -->
-      <div class="layer layer--back" aria-hidden="true"
-           style="--img:url('images/kitchen-wide.jpg')"></div>
-
-      <!-- Mid layer: table & props (optional subtle movement) -->
-      <div class="layer layer--mid" aria-hidden="true"
-           style="--img:url('images/kitchen-table.jpg')"></div>
-
-      <!-- Foreground: bread & steam -->
-      <div class="layer layer--front" aria-hidden="true">
-        <div class="front__steam" role="presentation"></div>
-        <img class="front__board" src="images/kitchen-board-bread.png" alt="" />
-      </div>
-
-      <!-- Copy + CTA pinned over the scene -->
-      <div class="scene__copy wrap">
-        <div class="brand">
-          <img class="logo" src="images/logo.png" width="64" height="64" alt="The Venditti Bread Co. logo" />
-          <div class="brand__text">
-            <h1 class="brand__title">The Venditti Bread Co.</h1>
-            <p class="brand__tag">Step into our kitchen—warmth, butter, and slow-fermented flavor.</p>
-          </div>
-        </div>
-        <div class="cta-row">
-          <a class="button button--primary" href="YOUR-ORDER-FORM-URL">Place an Order</a>
-          <a class="button button--ghost" href="#gallery">See our breads</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Transition band to oven -->
-    <div class="transition">
-      <div class="transition__inner wrap">
-        <h2>From counter to oven</h2>
-        <p>Watch the room melt into the oven glow as you scroll—like a loaf finding its heat.</p>
-      </div>
+<body class="theme-apple">
+  <!-- Minimal sticky nav -->
+  <header class="nav">
+    <div class="nav__inner wrap">
+      <a class="brand" href="#">
+        <span class="brand__dot" aria-hidden="true"></span>
+        <span class="brand__name">The Venditti Bread Co.</span>
+      </a>
+      <nav class="nav__links">
+        <a href="#breads">Breads</a>
+        <a href="#story">Our Story</a>
+        <a class="pill" href="YOUR-ORDER-FORM-URL">Order</a>
+      </nav>
     </div>
   </header>
 
-  <!-- Oven View -->
-  <section class="oven" aria-label="Inside the oven" id="content">
-    <div class="oven__bg" aria-hidden="true" style="--img:url('images/oven-close.jpg')"></div>
-    <div class="wrap oven__copy">
-      <h2>Slow-fermented. Small-batch.</h2>
-      <p>We give the dough time to rest—developing deep flavor, a crisp crust, and tender crumb.</p>
-      <a class="button button--dark" href="YOUR-ORDER-FORM-URL">Start your order</a>
+  <!-- HERO -->
+  <section class="hero" aria-label="Hero">
+    <div class="hero__bg" style="--img:url('images/hero-bread.jpg')"></div>
+    <div class="hero__scrim"></div>
+    <div class="hero__content wrap">
+      <p class="eyebrow">New</p>
+      <h1 class="display">
+        Bread, <span class="grad">beautifully</span> made.
+      </h1>
+      <p class="lead">
+        Slow-fermented. Small-batch. Crisp crust. Tender crumb.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn--primary" href="YOUR-ORDER-FORM-URL">Order now</a>
+        <a class="btn btn--ghost" href="#breads">See breads</a>
+      </div>
     </div>
   </section>
 
-  <!-- Gallery -->
-  <section id="gallery" class="section section--gallery" aria-label="Bread gallery">
+  <!-- Split feature (dark) -->
+  <section class="split split--dark" id="story" aria-label="Our process">
+    <div class="wrap split__grid">
+      <div class="split__copy">
+        <h2 class="headline">Time is our key ingredient.</h2>
+        <p class="copy">
+          We give dough the hours it deserves. Flavor deepens. Texture refines.
+          The result is bread that feels as good as it tastes.
+        </p>
+        <a class="link" href="YOUR-ORDER-FORM-URL">Pre-order for pickup →</a>
+      </div>
+      <figure class="split__media">
+        <img src="images/bench-work.jpg" alt="Bench work shaping dough" />
+      </figure>
+    </div>
+  </section>
+
+  <!-- Product grid -->
+  <section class="products" id="breads" aria-label="Breads">
     <div class="wrap">
-      <h2 class="section__title">Fresh from the oven</h2>
-      <p class="section__tag">A peek at the loaves our neighbors love.</p>
-
-      <!-- Masonry-ish gallery using CSS columns (simple, no JS) -->
-      <div class="gallery">
-        <!-- Replace images below with your own (same folder) -->
-        <figure class="gallery__item"><img src="images/bread-sourdough.jpg" alt="Sourdough loaf with deep ear" /></figure>
-        <figure class="gallery__item"><img src="images/bread-baguette.jpg" alt="Baguettes with crackly crust" /></figure>
-        <figure class="gallery__item"><img src="images/bread-focaccia.jpg" alt="Focaccia with rosemary and olive oil" /></figure>
-        <figure class="gallery__item"><img src="images/bread-country.jpg" alt="Country loaf on cooling rack" /></figure>
-        <figure class="gallery__item"><img src="images/bread-rye.jpg" alt="Dark rye sliced" /></figure>
-        <figure class="gallery__item"><img src="images/bread-multigrain.jpg" alt="Multigrain loaf with seeds" /></figure>
+      <h2 class="section-title">Our breads</h2>
+      <div class="grid-3">
+        <article class="card">
+          <figure class="card__media">
+            <img src="images/bread-sourdough.jpg" alt="Sourdough loaf" />
+          </figure>
+          <div class="card__body">
+            <h3 class="card__title">Sourdough</h3>
+            <p class="card__text">Elegant tang, balanced chew, signature ear.</p>
+          </div>
+        </article>
+        <article class="card">
+          <figure class="card__media">
+            <img src="images/bread-baguette.jpg" alt="Baguette" />
+          </figure>
+          <div class="card__body">
+            <h3 class="card__title">Baguette</h3>
+            <p class="card__text">Crackly crust, airy open crumb, classic form.</p>
+          </div>
+        </article>
+        <article class="card">
+          <figure class="card__media">
+            <img src="images/bread-focaccia.jpg" alt="Focaccia" />
+          </figure>
+          <div class="card__body">
+            <h3 class="card__title">Focaccia</h3>
+            <p class="card__text">Olive oil rich, herb-topped, irresistible.</p>
+          </div>
+        </article>
       </div>
-
       <div class="center">
-        <a class="button button--primary" href="YOUR-ORDER-FORM-URL">Order for pickup</a>
+        <a class="btn btn--primary btn--lg" href="YOUR-ORDER-FORM-URL">Start your order</a>
       </div>
+    </div>
+  </section>
+
+  <!-- Large visual (light) -->
+  <section class="panel" aria-label="Oven heat">
+    <div class="panel__media" style="--img:url('images/oven-close.jpg')"></div>
+    <div class="panel__scrim"></div>
+    <div class="panel__content wrap">
+      <h2 class="headline">From oven to table.</h2>
+      <p class="copy">Ready in ~3 days. Planned, never rushed.</p>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="site-footer" aria-label="Footer">
-    <div class="wrap footer__inner">
-      <div>© <span id="yr"></span> The Venditti Bread Co. · PA</div>
+  <footer class="footer" aria-label="Footer">
+    <div class="wrap footer__grid">
+      <div class="footer__brand">
+        <span class="brand__dot" aria-hidden="true"></span>
+        <span>The Venditti Bread Co.</span>
+      </div>
       <nav class="footer__nav">
+        <a href="#breads">Breads</a>
+        <a href="#story">Our Story</a>
         <a href="YOUR-ORDER-FORM-URL">Order</a>
-        <a href="#gallery">Breads</a>
       </nav>
+      <div class="footer__copy">© <span id="yr"></span> The Venditti Bread Co. · Pleasantville, NY</div>
     </div>
   </footer>
 
   <script>
-    // Footer year
+    // Year
     document.getElementById('yr').textContent = new Date().getFullYear();
 
-    // Gentle parallax powered by CSS variables (respects reduced motion)
-    (function(){
+    // Subtle parallax (no jank, respects reduced motion)
+    (() => {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
       const root = document.documentElement;
-      const supportsRM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (supportsRM) return;
-
-      // Map scroll progress (0..1) across the scene height to depth shifts
-      const scene = document.querySelector('.scene');
-      if(!scene) return;
-
-      const onScroll = () => {
-        const rect = scene.getBoundingClientRect();
-        const vh = window.innerHeight || 1;
-        const total = rect.height + vh; // range while passing the scene
-        const seen = Math.min(Math.max(vh - rect.top, 0), total);
-        const t = seen / total; // 0..1
-
-        // Depth factors (tweaked for a cozy feel)
-        root.style.setProperty('--shift-back',  (t * 12).toFixed(2) + 'vh');
-        root.style.setProperty('--shift-mid',   (t * 18).toFixed(2) + 'vh');
-        root.style.setProperty('--shift-front', (t * 26).toFixed(2) + 'vh');
-        root.style.setProperty('--steam',       (Math.sin(t * Math.PI) * 1).toFixed(3));
+      const track = () => {
+        const y = window.scrollY || 0;
+        root.style.setProperty('--hero-shift', Math.min(y*0.12, 80) + 'px');
+        root.style.setProperty('--panel-shift', Math.max(-y*0.08, -80) + 'px');
       };
-
-      window.addEventListener('scroll', onScroll, {passive:true});
-      window.addEventListener('resize', onScroll);
-      onScroll();
+      track(); addEventListener('scroll', track, {passive:true}); addEventListener('resize', track);
     })();
   </script>
-
-  <noscript>
-    <style>
-      /* Reasonable fallback if JS is disabled */
-      .layer { transform: none !important; }
-      .front__steam { opacity: .2 !important; }
-    </style>
-  </noscript>
 </body>
 </html>
