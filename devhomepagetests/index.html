@@ -6,17 +6,23 @@
   <title>The Venditti Bread Co.</title>
   <meta name="theme-color" content="#0a0a0a" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Keep it system-first like Apple -->
+
+  <!-- Critical base (full styles are in styles.css) -->
   <style>
-    /* Inline critical fonts to avoid flashes; full styles are in styles.css */
     :root { --ink:#0a0a0a; --bg:#fff; }
     html,body{margin:0;height:100%}
     body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--ink)}
   </style>
+
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Social preview -->
+  <meta property="og:title" content="The Venditti Bread Co." />
+  <meta property="og:description" content="Bread, beautifully made. Slow-fermented and baked to order." />
+  <meta property="og:image" content="images/oven.jpg" />
 </head>
 <body class="theme-apple">
-  <!-- Minimal sticky nav -->
+  <!-- Sticky nav -->
   <header class="nav">
     <div class="nav__inner wrap">
       <a class="brand" href="#">
@@ -31,18 +37,16 @@
     </div>
   </header>
 
-  <!-- HERO -->
+  <!-- HERO uses your oven photo -->
   <section class="hero" aria-label="Hero">
-    <div class="hero__bg" style="--img:url('images/hero-bread.jpg')"></div>
+    <div class="hero__bg" style="--img:url('images/oven.jpg')"></div>
     <div class="hero__scrim"></div>
     <div class="hero__content wrap">
-      <p class="eyebrow">New</p>
+      <p class="eyebrow">Fresh daily</p>
       <h1 class="display">
         Bread, <span class="grad">beautifully</span> made.
       </h1>
-      <p class="lead">
-        Slow-fermented. Small-batch. Crisp crust. Tender crumb.
-      </p>
+      <p class="lead">Slow-fermented. Small-batch. Crisp crust. Tender crumb.</p>
       <div class="cta-row">
         <a class="btn btn--primary" href="YOUR-ORDER-FORM-URL">Order now</a>
         <a class="btn btn--ghost" href="#breads">See breads</a>
@@ -50,22 +54,91 @@
     </div>
   </section>
 
-  <!-- Split feature (dark) -->
+  <!-- Process split (dark) -->
   <section class="split split--dark" id="story" aria-label="Our process">
     <div class="wrap split__grid">
       <div class="split__copy">
         <h2 class="headline">Time is our key ingredient.</h2>
         <p class="copy">
-          We give dough the hours it deserves. Flavor deepens. Texture refines.
-          The result is bread that feels as good as it tastes.
+          We let dough rest and develop. Flavor deepens. Texture refines.
+          The result: a loaf that feels as good as it tastes.
         </p>
         <a class="link" href="YOUR-ORDER-FORM-URL">Pre-order for pickup →</a>
       </div>
       <figure class="split__media">
-        <img src="images/bench-work.jpg" alt="Bench work shaping dough" />
+        <img src="images/bread-loaf-1.jpg" alt="Fresh baked loaf on board" />
       </figure>
     </div>
   </section>
+
+<!-- Gallery -->
+<section id="gallery" class="section section--gallery" aria-label="Bread gallery">
+    <div class="wrap">
+        <h2 class="section-title">Fresh from the oven</h2>
+        <p class="section__tag">A peek at the loaves our neighbors love.</p>
+
+        <!-- Masonry-style gallery (CSS columns) -->
+        <div class="gallery">
+            <!-- Use loading="lazy" for performance -->
+            <figure class="gallery__item">
+                <img loading="lazy" src="images/scored-traditional-loaf.jpeg"
+                    alt="Traditional sourdough with decorative scoring on a cooling rack">
+            </figure>
+
+            <figure class="gallery__item">
+                <img loading="lazy" src="images/scored-traditional-loaf-2.jpeg"
+                    alt="Golden crusted sourdough with dramatic ear">
+            </figure>
+
+            <figure class="gallery__item">
+                <img loading="lazy" src="images/cut-tradition-loaf.jpeg"
+                    alt="Traditional loaf cut open showing airy crumb">
+            </figure>
+
+            <figure class="gallery__item">
+                <img loading="lazy" src="images/cinn-sugar-loaf.jpg" alt="Cinnamon sugar loaf with bold scoring">
+            </figure>
+
+            <figure class="gallery__item">
+                <img loading="lazy" src="images/cin-sugar-swirl.jpeg" alt="Cinnamon swirl loaf cut open showing spiral">
+            </figure>
+
+            <figure class="gallery__item">
+                <img loading="lazy" src="images/cut-cin-sugar.jpeg" alt="Cinnamon swirl crumb close-up">
+            </figure>
+
+            <figure class="gallery__item">
+                <img loading="lazy" src="images/cut-pumpkin.jpeg"
+                    alt="Pumpkin loaf split in half with rich orange crumb">
+            </figure>
+
+            <figure class="gallery__item">
+                <img loading="lazy" src="images/jalapeno-cheddar.jpeg"
+                    alt="Jalapeño cheddar loaf topped with sliced peppers and melted cheese">
+            </figure>
+
+            <figure class="gallery__item">
+                <img loading="lazy" src="images/jalapeno-cheddar-2.jpeg"
+                    alt="Second jalapeño cheddar loaf on rack with blistered cheese">
+            </figure>
+
+            <figure class="gallery__item">
+                <img loading="lazy" src="images/lemon-blueberry.jpeg"
+                    alt="Lemon blueberry loaf with berries bursting through the score">
+            </figure>
+
+            <!-- Reuse earlier hero loaf as a beauty shot -->
+            <figure class="gallery__item">
+                <img loading="lazy" src="images/bread-loaf-1.jpg" alt="Caramelized crust sourdough on checkered board">
+            </figure>
+        </div>
+
+        <div class="center" style="margin-top:14px;">
+            <a class="btn btn--primary btn--lg" href="YOUR-ORDER-FORM-URL">Order for pickup</a>
+        </div>
+    </div>
+</section>
+
 
   <!-- Product grid -->
   <section class="products" id="breads" aria-label="Breads">
@@ -74,7 +147,7 @@
       <div class="grid-3">
         <article class="card">
           <figure class="card__media">
-            <img src="images/bread-sourdough.jpg" alt="Sourdough loaf" />
+            <img src="images/bread-loaf-1.jpg" alt="Sourdough loaf" />
           </figure>
           <div class="card__body">
             <h3 class="card__title">Sourdough</h3>
@@ -83,7 +156,7 @@
         </article>
         <article class="card">
           <figure class="card__media">
-            <img src="images/bread-baguette.jpg" alt="Baguette" />
+            <img src="images/oven.jpg" alt="Kitchen oven ready to bake" />
           </figure>
           <div class="card__body">
             <h3 class="card__title">Baguette</h3>
@@ -92,11 +165,11 @@
         </article>
         <article class="card">
           <figure class="card__media">
-            <img src="images/bread-focaccia.jpg" alt="Focaccia" />
+            <img src="images/bread-loaf-1.jpg" alt="Focaccia (representative image)" />
           </figure>
           <div class="card__body">
             <h3 class="card__title">Focaccia</h3>
-            <p class="card__text">Olive oil rich, herb-topped, irresistible.</p>
+            <p class="card__text">Olive-oil rich, herb-topped, irresistible.</p>
           </div>
         </article>
       </div>
@@ -106,9 +179,9 @@
     </div>
   </section>
 
-  <!-- Large visual (light) -->
+  <!-- Large visual panel—reuses oven image for cohesion -->
   <section class="panel" aria-label="Oven heat">
-    <div class="panel__media" style="--img:url('images/oven-close.jpg')"></div>
+    <div class="panel__media" style="--img:url('images/oven.jpg')"></div>
     <div class="panel__scrim"></div>
     <div class="panel__content wrap">
       <h2 class="headline">From oven to table.</h2>
@@ -133,10 +206,9 @@
   </footer>
 
   <script>
-    // Year
     document.getElementById('yr').textContent = new Date().getFullYear();
 
-    // Subtle parallax (no jank, respects reduced motion)
+    // Gentle parallax (respects reduced motion)
     (() => {
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
       const root = document.documentElement;
