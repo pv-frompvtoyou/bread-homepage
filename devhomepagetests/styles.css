@@ -176,3 +176,48 @@ img{max-width:100%;display:block}
   object-fit: cover; /* crop nicely into square */
   display: block;
 }
+
+.products {
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.products h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  justify-items: center;
+}
+
+.product-grid figure {
+  margin: 0;
+}
+
+.product-grid img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+.product-grid figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #374151; /* slate-700 */
+  font-weight: 500;
+  text-align: center;
+}
+
