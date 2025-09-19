@@ -1,35 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>The Venditti Bread Co.</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Venditti Bread Co.</title>
+    <meta name="theme-color" content="#0a0a0a" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Critical base (full styles are in styles.css) -->
+    <style>
+        :root {
+            --ink: #0a0a0a;
+            --bg: #fff;
+        }
+
+        html,
+        body {
+            margin: 0;
+            height: 100%
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--ink)
+        }
+    </style>
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Social preview -->
+    <meta property="og:title" content="The Venditti Bread Co." />
+    <meta property="og:description" content="Bread, beautifully made. Slow-fermented and baked to order." />
+    <meta property="og:image" content="/images/oven.jpg" />
 </head>
-<body>
-  <header class="hero" style="background-image:url('images/hero-bread.jpg');">
-    <div class="hero__inner">
-      <img class="logo" src="images/logo.png" alt="The Venditti Bread Co. logo">
-      <div>
-        <h1>The Venditti Bread Co.</h1>
-        <p class="tagline">Freshly baked, made to order.</p>
-      </div>
-    </div>
-  </header>
 
-  <main class="wrap">
-    <section class="card">
-      <h2>Welcome</h2>
-      <p>Handcrafted breads baked in small batches. Place your order and pick up in as little as three days.</p>
-      <a class="button" href="https://script.google.com/macros/s/AKfycbyXl3gLByDqXCMUZVybKgopL309YtMhBJGQFONJT3pBaCQE3zCbkxi_9ddfYwBmBb0i/exec">Place an Order</a>
+<body class="theme-apple">
+    <!-- Sticky nav -->
+    <header class="nav">
+        <div class="nav__inner wrap">
+            <a class="brand" href="#">
+                <span class="brand__dot" aria-hidden="true"></span>
+                <span class="brand__name">The Venditti Bread Co.</span>
+            </a>
+            <nav class="nav__links">
+                <a href="#breads">Breads</a>
+                <a href="#story">Our Story</a>
+                <a class="pill"
+                    href="https://script.google.com/macros/s/AKfycbyXl3gLByDqXCMUZVybKgopL309YtMhBJGQFONJT3pBaCQE3zCbkxi_9ddfYwBmBb0i/exec">Order</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO uses your oven photo -->
+    <section class="hero" aria-label="Hero">
+        <div class="hero__bg" style="--img:url('/images/oven.jpg')"></div>
+        <div class="hero__scrim"></div>
+        <div class="hero__content wrap">
+            <p class="eyebrow">Fresh daily</p>
+            <h1 class="display">
+                Bread, <span class="grad">beautifully</span> made.
+            </h1>
+            <p class="lead">Slow-fermented. Small-batch. Crisp crust. Tender crumb.</p>
+            <div class="cta-row">
+                <a class="btn btn--primary"
+                    href="https://script.google.com/macros/s/AKfycbyXl3gLByDqXCMUZVybKgopL309YtMhBJGQFONJT3pBaCQE3zCbkxi_9ddfYwBmBb0i/exec">Order
+                    now</a>
+                <a class="btn btn--ghost" href="#breads">See breads</a>
+            </div>
+        </div>
     </section>
-  </main>
 
-  <footer class="site-footer">
-    © <span id="yr"></span> The Venditti Bread Co.
-  </footer>
-  <script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+    <!-- Process split (dark) -->
+    <section class="split split--dark" id="story" aria-label="Our process">
+        <div class="wrap split__grid">
+            <div class="split__copy">
+                <h2 class="headline">Time is our key ingredient.</h2>
+                <p class="copy">
+                    We let dough rest and develop. Flavor deepens. Texture refines.
+                    The result: a loaf that feels as good as it tastes.
+                </p>
+                <a class="link"
+                    href="https://script.google.com/macros/s/AKfycbyXl3gLByDqXCMUZVybKgopL309YtMhBJGQFONJT3pBaCQE3zCbkxi_9ddfYwBmBb0i/exec">Pre-order
+                    for pickup →</a>
+            </div>
+            <figure class="split__media">
+                <img src="/images/cinn-sugar-loaf.jpg" alt="Fresh baked loaf on board" />
+            </figure>
+        </div>
+    </section>
+
+    <!-- Product grid -->
+    <section class="products" id="breads" aria-label="Breads">
+        <h2>Our Breads</h2>
+        <div class="product-grid">
+            <figure>
+                <img src="/images/scored-traditional-loaf.jpeg" alt="Traditional sourdough with decorative scoring">
+                <figcaption>Traditional Sourdough</figcaption>
+            </figure>
+            <figure>
+                <img src="/images/scored-traditional-loaf-2.jpeg" alt="Golden crusted sourdough with dramatic ear">
+                <figcaption>Golden Crust Sourdough</figcaption>
+            </figure>
+            <figure>
+                <img src="/images/cut-tradition-loaf.jpeg" alt="Traditional loaf cut open showing airy crumb">
+                <figcaption>Classic Crumb</figcaption>
+            </figure>
+            <figure>
+                <img src="/images/cinn-sugar-loaf.jpg" alt="Cinnamon sugar loaf with bold scoring">
+                <figcaption>Cinnamon Sugar Loaf</figcaption>
+            </figure>
+            <figure>
+                <img src="/images/cin-sugar-swirl.jpeg" alt="Cinnamon swirl loaf">
+                <figcaption>Cinnamon Swirl</figcaption>
+            </figure>
+            <figure>
+                <img src="/images/cut-cin-sugar.jpeg" alt="Cinnamon swirl crumb close-up">
+                <figcaption>Cinnamon Swirl (Cut)</figcaption>
+            </figure>
+            <figure>
+                <img src="/images/cut-pumpkin.jpeg" alt="Pumpkin loaf split with orange crumb">
+                <figcaption>Pumpkin Loaf</figcaption>
+            </figure>
+            <figure>
+                <img src="/images/jalapeno-cheddar.jpeg" alt="Jalapeño cheddar loaf with melted cheese">
+                <figcaption>Jalapeño Cheddar</figcaption>
+            </figure>
+            <figure>
+                <img src="/images/jalapeno-cheddar-2.jpeg" alt="Second jalapeño cheddar loaf">
+                <figcaption>Cheesy Jalapeño</figcaption>
+            </figure>
+            <figure>
+                <img src="/images/lemon-blueberry.jpeg" alt="Lemon blueberry loaf with berries">
+                <figcaption>Lemon Blueberry</figcaption>
+            </figure>
+        </div>
+    </section>
+
+
+
+    <!-- Large visual panel—reuses oven image for cohesion -->
+    <section class="panel" aria-label="Oven heat">
+        <div class="panel__media" style="--img:url('/images/4-bread-on-table.jpeg')"></div>
+        <div class="panel__scrim"></div>
+        <div class="panel__content wrap">
+            <h2 class="headline">From oven to table.</h2>
+            <p class="copy">Ready in ~3 days. Planned, never rushed.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" aria-label="Footer">
+        <div class="wrap footer__grid">
+            <div class="footer__brand">
+                <span class="brand__dot" aria-hidden="true"></span>
+                <span>The Venditti Bread Co.</span>
+            </div>
+            <nav class="footer__nav">
+                <a href="#breads">Breads</a>
+                <a href="#story">Our Story</a>
+                <a
+                    href="https://script.google.com/macros/s/AKfycbyXl3gLByDqXCMUZVybKgopL309YtMhBJGQFONJT3pBaCQE3zCbkxi_9ddfYwBmBb0i/exec">Order</a>
+            </nav>
+            <div class="footer__copy">© <span id="yr"></span> The Venditti Bread Co. · Aston, PA</div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('yr').textContent = new Date().getFullYear();
+
+        // Gentle parallax (respects reduced motion)
+        (() => {
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            const root = document.documentElement;
+            const track = () => {
+                const y = window.scrollY || 0;
+                root.style.setProperty('--hero-shift', Math.min(y * 0.12, 80) + 'px');
+                root.style.setProperty('--panel-shift', Math.max(-y * 0.08, -80) + 'px');
+            };
+            track(); addEventListener('scroll', track, { passive: true }); addEventListener('resize', track);
+        })();
+    </script>
 </body>
+
 </html>
