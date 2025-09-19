@@ -7,127 +7,148 @@
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
 
-  <!-- Basic social preview (optional) -->
+  <!-- Social preview (optional) -->
   <meta property="og:title" content="The Venditti Bread Co." />
-  <meta property="og:description" content="Freshly baked bread, made to order." />
-  <meta property="og:image" content="images/hero-bread.jpg" />
-  <meta name="theme-color" content="#111827" />
+  <meta property="og:description" content="Step into our warm kitchen. Slow-fermented breads, baked to order." />
+  <meta property="og:image" content="images/kitchen-wide.jpg" />
+  <meta name="theme-color" content="#3b2f2a" />
 </head>
-<body>
-  <!-- Header / Hero -->
-  <header class="hero" style="--hero-img: url('images/hero-bread.jpg')">
-    <div class="hero__scrim"></div>
-    <div class="hero__inner wrap">
-      <div class="hero__brand">
-        <img class="logo" src="images/logo.png" alt="The Venditti Bread Co. logo" width="64" height="64">
-        <div>
-          <h1 class="hero__title">The Venditti Bread Co.</h1>
-          <p class="tagline">Freshly baked, made to order.</p>
+<body class="theme-cozy">
+  <!-- Accessibility skip -->
+  <a class="skiplink" href="#content">Skip to content</a>
+
+  <!-- Scrolly Kitchen: Layered scene -->
+  <header class="scene" aria-label="Warm kitchen scene">
+    <!-- Layer stack uses sticky containers for iOS-friendly parallax -->
+    <div class="scene__stack">
+      <!-- Back wall / kitchen -->
+      <div class="layer layer--back" aria-hidden="true"
+           style="--img:url('images/kitchen-wide.jpg')"></div>
+
+      <!-- Mid layer: table & props (optional subtle movement) -->
+      <div class="layer layer--mid" aria-hidden="true"
+           style="--img:url('images/kitchen-table.jpg')"></div>
+
+      <!-- Foreground: bread & steam -->
+      <div class="layer layer--front" aria-hidden="true">
+        <div class="front__steam" role="presentation"></div>
+        <img class="front__board" src="images/kitchen-board-bread.png" alt="" />
+      </div>
+
+      <!-- Copy + CTA pinned over the scene -->
+      <div class="scene__copy wrap">
+        <div class="brand">
+          <img class="logo" src="images/logo.png" width="64" height="64" alt="The Venditti Bread Co. logo" />
+          <div class="brand__text">
+            <h1 class="brand__title">The Venditti Bread Co.</h1>
+            <p class="brand__tag">Step into our kitchen—warmth, butter, and slow-fermented flavor.</p>
+          </div>
+        </div>
+        <div class="cta-row">
+          <a class="button button--primary" href="YOUR-ORDER-FORM-URL">Place an Order</a>
+          <a class="button button--ghost" href="#gallery">See our breads</a>
         </div>
       </div>
-      <a class="button button--primary" href="YOUR-ORDER-FORM-URL">Place an Order</a>
+    </div>
+
+    <!-- Transition band to oven -->
+    <div class="transition">
+      <div class="transition__inner wrap">
+        <h2>From counter to oven</h2>
+        <p>Watch the room melt into the oven glow as you scroll—like a loaf finding its heat.</p>
+      </div>
     </div>
   </header>
 
-  <main>
-    <!-- Intro / About -->
-    <section class="section">
-      <div class="wrap grid-2">
-        <div class="card">
-          <h2>Tradition. Time. Taste.</h2>
-          <p>
-            We craft naturally leavened breads in small batches—slow-fermented for deep flavor,
-            a crisp crust, and tender crumb. Pre-order below and pick up in as little as three days.
-          </p>
-          <ul class="list">
-            <li>Small-batch baking</li>
-            <li>Local pickup PA</li>
-            <li>Special orders welcome</li>
-          </ul>
-          <div class="cta-row">
-            <a class="button button--dark" href="YOUR-ORDER-FORM-URL" aria-label="Place an order">Order Now</a>
-            <a class="button button--ghost" href="#featured">View Breads</a>
-          </div>
-        </div>
+  <!-- Oven View -->
+  <section class="oven" aria-label="Inside the oven" id="content">
+    <div class="oven__bg" aria-hidden="true" style="--img:url('images/oven-close.jpg')"></div>
+    <div class="wrap oven__copy">
+      <h2>Slow-fermented. Small-batch.</h2>
+      <p>We give the dough time to rest—developing deep flavor, a crisp crust, and tender crumb.</p>
+      <a class="button button--dark" href="YOUR-ORDER-FORM-URL">Start your order</a>
+    </div>
+  </section>
 
-        <!-- Feature image (replace as you like) -->
-        <figure class="media-card">
-          <img src="images/feature-loaves.jpg" alt="Fresh baked loaves on a rack">
-        </figure>
+  <!-- Gallery -->
+  <section id="gallery" class="section section--gallery" aria-label="Bread gallery">
+    <div class="wrap">
+      <h2 class="section__title">Fresh from the oven</h2>
+      <p class="section__tag">A peek at the loaves our neighbors love.</p>
+
+      <!-- Masonry-ish gallery using CSS columns (simple, no JS) -->
+      <div class="gallery">
+        <!-- Replace images below with your own (same folder) -->
+        <figure class="gallery__item"><img src="images/bread-sourdough.jpg" alt="Sourdough loaf with deep ear" /></figure>
+        <figure class="gallery__item"><img src="images/bread-baguette.jpg" alt="Baguettes with crackly crust" /></figure>
+        <figure class="gallery__item"><img src="images/bread-focaccia.jpg" alt="Focaccia with rosemary and olive oil" /></figure>
+        <figure class="gallery__item"><img src="images/bread-country.jpg" alt="Country loaf on cooling rack" /></figure>
+        <figure class="gallery__item"><img src="images/bread-rye.jpg" alt="Dark rye sliced" /></figure>
+        <figure class="gallery__item"><img src="images/bread-multigrain.jpg" alt="Multigrain loaf with seeds" /></figure>
       </div>
-    </section>
 
-    <!-- Featured Breads -->
-    <section id="featured" class="section section--tinted">
-      <div class="wrap">
-        <h2 class="section__title">Featured Breads</h2>
-        <div class="cards-3">
-          <article class="tile">
-            <img src="images/bread-sourdough.jpg" alt="Sourdough loaf">
-            <div class="tile__body">
-              <h3>Sourdough</h3>
-              <p>Classic crust, tangy crumb—fermented for 24–36 hours.</p>
-            </div>
-          </article>
-          <article class="tile">
-            <img src="images/bread-baguette.jpg" alt="Baguette">
-            <div class="tile__body">
-              <h3>Baguette</h3>
-              <p>Thin, crackly crust with a light, airy interior.</p>
-            </div>
-          </article>
-          <article class="tile">
-            <img src="images/bread-focaccia.jpg" alt="Focaccia">
-            <div class="tile__body">
-              <h3>Focaccia</h3>
-              <p>Olive oil-rich, herb-topped, irresistibly soft.</p>
-            </div>
-          </article>
-        </div>
-
-        <div class="center">
-          <a class="button button--primary" href="YOUR-ORDER-FORM-URL">Start Your Order</a>
-        </div>
+      <div class="center">
+        <a class="button button--primary" href="YOUR-ORDER-FORM-URL">Order for pickup</a>
       </div>
-    </section>
-
-    <!-- Location / Hours (edit to your details) -->
-    <section class="section">
-      <div class="wrap grid-3">
-        <div class="info card">
-          <h4>Pickup</h4>
-          <p>Order today—earliest pickup in 3 days.</p>
-        </div>
-        <div class="info card">
-          <h4>Location</h4>
-          <p>Pleasantville, NY</p>
-        </div>
-        <div class="info card">
-          <h4>Hours</h4>
-          <p>Wed–Sun · 8am–2pm</p>
-        </div>
-      </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
   <!-- Footer -->
-  <footer class="site-footer">
+  <footer class="site-footer" aria-label="Footer">
     <div class="wrap footer__inner">
-      <div>© <span id="yr"></span> The Venditti Bread Co.</div>
+      <div>© <span id="yr"></span> The Venditti Bread Co. · PA</div>
       <nav class="footer__nav">
         <a href="YOUR-ORDER-FORM-URL">Order</a>
-        <a href="#featured">Breads</a>
+        <a href="#gallery">Breads</a>
       </nav>
     </div>
   </footer>
 
   <script>
+    // Footer year
     document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Gentle parallax powered by CSS variables (respects reduced motion)
+    (function(){
+      const root = document.documentElement;
+      const supportsRM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (supportsRM) return;
+
+      // Map scroll progress (0..1) across the scene height to depth shifts
+      const scene = document.querySelector('.scene');
+      if(!scene) return;
+
+      const onScroll = () => {
+        const rect = scene.getBoundingClientRect();
+        const vh = window.innerHeight || 1;
+        const total = rect.height + vh; // range while passing the scene
+        const seen = Math.min(Math.max(vh - rect.top, 0), total);
+        const t = seen / total; // 0..1
+
+        // Depth factors (tweaked for a cozy feel)
+        root.style.setProperty('--shift-back',  (t * 12).toFixed(2) + 'vh');
+        root.style.setProperty('--shift-mid',   (t * 18).toFixed(2) + 'vh');
+        root.style.setProperty('--shift-front', (t * 26).toFixed(2) + 'vh');
+        root.style.setProperty('--steam',       (Math.sin(t * Math.PI) * 1).toFixed(3));
+      };
+
+      window.addEventListener('scroll', onScroll, {passive:true});
+      window.addEventListener('resize', onScroll);
+      onScroll();
+    })();
   </script>
+
+  <noscript>
+    <style>
+      /* Reasonable fallback if JS is disabled */
+      .layer { transform: none !important; }
+      .front__steam { opacity: .2 !important; }
+    </style>
+  </noscript>
 </body>
 </html>
