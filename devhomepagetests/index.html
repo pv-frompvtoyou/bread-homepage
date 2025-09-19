@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Venditti Bread Co.</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Basic social preview (optional) -->
+  <meta property="og:title" content="The Venditti Bread Co." />
+  <meta property="og:description" content="Freshly baked bread, made to order." />
+  <meta property="og:image" content="images/hero-bread.jpg" />
+  <meta name="theme-color" content="#111827" />
+</head>
+<body>
+  <!-- Header / Hero -->
+  <header class="hero" style="--hero-img: url('images/hero-bread.jpg')">
+    <div class="hero__scrim"></div>
+    <div class="hero__inner wrap">
+      <div class="hero__brand">
+        <img class="logo" src="images/logo.png" alt="The Venditti Bread Co. logo" width="64" height="64">
+        <div>
+          <h1 class="hero__title">The Venditti Bread Co.</h1>
+          <p class="tagline">Freshly baked, made to order.</p>
+        </div>
+      </div>
+      <a class="button button--primary" href="YOUR-ORDER-FORM-URL">Place an Order</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Intro / About -->
+    <section class="section">
+      <div class="wrap grid-2">
+        <div class="card">
+          <h2>Tradition. Time. Taste.</h2>
+          <p>
+            We craft naturally leavened breads in small batches—slow-fermented for deep flavor,
+            a crisp crust, and tender crumb. Pre-order below and pick up in as little as three days.
+          </p>
+          <ul class="list">
+            <li>Small-batch baking</li>
+            <li>Local pickup PA</li>
+            <li>Special orders welcome</li>
+          </ul>
+          <div class="cta-row">
+            <a class="button button--dark" href="YOUR-ORDER-FORM-URL" aria-label="Place an order">Order Now</a>
+            <a class="button button--ghost" href="#featured">View Breads</a>
+          </div>
+        </div>
+
+        <!-- Feature image (replace as you like) -->
+        <figure class="media-card">
+          <img src="images/feature-loaves.jpg" alt="Fresh baked loaves on a rack">
+        </figure>
+      </div>
+    </section>
+
+    <!-- Featured Breads -->
+    <section id="featured" class="section section--tinted">
+      <div class="wrap">
+        <h2 class="section__title">Featured Breads</h2>
+        <div class="cards-3">
+          <article class="tile">
+            <img src="images/bread-sourdough.jpg" alt="Sourdough loaf">
+            <div class="tile__body">
+              <h3>Sourdough</h3>
+              <p>Classic crust, tangy crumb—fermented for 24–36 hours.</p>
+            </div>
+          </article>
+          <article class="tile">
+            <img src="images/bread-baguette.jpg" alt="Baguette">
+            <div class="tile__body">
+              <h3>Baguette</h3>
+              <p>Thin, crackly crust with a light, airy interior.</p>
+            </div>
+          </article>
+          <article class="tile">
+            <img src="images/bread-focaccia.jpg" alt="Focaccia">
+            <div class="tile__body">
+              <h3>Focaccia</h3>
+              <p>Olive oil-rich, herb-topped, irresistibly soft.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="center">
+          <a class="button button--primary" href="YOUR-ORDER-FORM-URL">Start Your Order</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location / Hours (edit to your details) -->
+    <section class="section">
+      <div class="wrap grid-3">
+        <div class="info card">
+          <h4>Pickup</h4>
+          <p>Order today—earliest pickup in 3 days.</p>
+        </div>
+        <div class="info card">
+          <h4>Location</h4>
+          <p>Pleasantville, NY</p>
+        </div>
+        <div class="info card">
+          <h4>Hours</h4>
+          <p>Wed–Sun · 8am–2pm</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="wrap footer__inner">
+      <div>© <span id="yr"></span> The Venditti Bread Co.</div>
+      <nav class="footer__nav">
+        <a href="YOUR-ORDER-FORM-URL">Order</a>
+        <a href="#featured">Breads</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
