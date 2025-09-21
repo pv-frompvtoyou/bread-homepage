@@ -42,18 +42,23 @@
     <style>
         .display {
             font-family: 'Playfair Display', serif;
-            font-size: 3rem;
+            font-size: clamp(1.8rem, 6vw, 3.2rem);
+            /* scales with screen width */
             font-weight: 700;
+            white-space: nowrap;
+            /* prevent line breaks */
         }
 
         .display .grad {
             font-family: 'Great Vibes', cursive;
-            font-size: 3.2rem;
+            font-size: clamp(2rem, 6.5vw, 3.4rem);
+            /* also responsive */
             font-weight: 400;
             color: #ff7676;
             /* accent color for contrast */
         }
     </style>
+
 
 </head>
 
