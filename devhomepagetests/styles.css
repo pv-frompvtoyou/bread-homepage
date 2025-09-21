@@ -116,9 +116,11 @@ img{max-width:100%;display:block}
 }
 .panel__media{
   position:absolute; inset:-8% -8% -8% -8%;
-  background-image:var(--img); background-size:cover; background-position:center 60%;
+  background-image:var(--img); background-size:cover; background-position:top center 60%;
   transform: translate3d(0,var(--panel-shift),0) scale(1.06);
   filter: contrast(1.05) brightness(.88) saturate(1.04);
+}
+
 }
 .panel__scrim{ position:absolute; inset:0; background: radial-gradient(70% 80% at 50% 30%, transparent, rgba(0,0,0,.65)) }
 .panel__content{ position:relative; z-index:1; text-align:center }
