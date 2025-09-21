@@ -91,7 +91,7 @@ img{max-width:100%;display:block}
 .split__grid{ display:grid; grid-template-columns:1.1fr 1fr; gap:28px; align-items:center }
 .split__copy .headline{ margin:0 0 10px; font-size:clamp(24px,3.6vw,40px); letter-spacing:-.01em; }
 .split__copy .copy{ margin:0 0 14px; color:#d6d7da; max-width:640px }
-.split__copy .link{ color:#fecf6a; text-decoration:none; font-weight:700 }
+.split__copy .link{ color:#ff7676; text-decoration:none; font-weight:700 }
 .split__copy .link:hover{ text-decoration:underline }
 .split__media img{ width:100%; border-radius:16px; box-shadow:0 24px 60px rgba(0,0,0,.35) }
 
