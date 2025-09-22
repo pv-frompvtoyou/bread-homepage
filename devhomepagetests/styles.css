@@ -380,7 +380,7 @@ body {
 .panel__scrim {
   position: absolute;
   inset: 0;
-  background: radial-gradient(70% 80% at 50% 30%, transparent, rgba(0, 0, 0, .65))
+  background: radial-gradient(70% 80% at 50% 70%, transparent, rgba(0,0,0,.65));
 }
 
 .panel__content {
