@@ -35,7 +35,7 @@ img{max-width:100%;display:block}
 
 /* Nav */
 .nav{
-  position:sticky; top:0; z-index:1000;
+  position:fixed; top:0; z-index:1000;
   backdrop-filter: saturate(180%) blur(14px);
   background: color-mix(in srgb, #ffffff 72%, transparent);
   border-bottom:1px solid #f1f1f3;
