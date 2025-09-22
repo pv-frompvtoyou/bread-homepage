@@ -145,25 +145,21 @@ body {
   color: #fff !important;
 }
 
-/* Hero uses your oven photo */
-.hero {
-  position: relative;
-  min-height: 88vh;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-  background: #000;
-}
+/* Better hero height + calmer transforms on phones */
+.hero{ min-height: 90svh; }              /* small-viewport unit handles iOS bars */
 
+/* HERO background — seam-proof + mobile-safe */
 .hero__bg{
-  position:absolute; inset:-8% -8% 0 -8%;
+  position:absolute;
+  /* 2px bleed on every side to eliminate subpixel seams */
+  inset:-2px;
   background-image:var(--img);
-  background-size:101% auto;
-  background-position:center 60%;
-  background-repeat:no-repeat;          /* ✅ never tile */
-  transform:translate3d(0,var(--hero-shift),0) scale(1.055);
-  will-change:transform;                 /* ✅ hint for smoother GPU render */
-  backface-visibility:hidden;
+  background-size:cover;                /* fill container reliably */
+  background-position:center 60%;       /* vertical composition */
+  background-repeat:no-repeat;
+  transform: translate3d(0,var(--hero-shift),0) scale(1.02);
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
 .hero__scrim {
@@ -367,15 +363,15 @@ body {
   color: #fff;
 }
 
+/* Optional: do the same for the large panel image */
 .panel__media{
-  position:absolute; inset:-8% -8% -8% -8%;
+  position:absolute;
+  inset:-2px;
   background-image:var(--img);
   background-size:cover;
-  background-position:center; 
-  background-repeat:no-repeat;          /* ✅ never tile */
-  transform:translate3d(0,var(--panel-shift),0) scale(1.06);
-  will-change:transform;
-  backface-visibility:hidden;
+  background-position:center 50%;
+  background-repeat:no-repeat;
+  transform: translate3d(0,var(--panel-shift),0) scale(1.02);
 }
 
 .panel__scrim {
@@ -486,13 +482,12 @@ body {
   }
 }
 
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce) {
-
-  .hero__bg,
-  .panel__media {
-    transform: none !important
-  }
+@media (max-width: 640px){
+  .hero{ min-height: 72svh; }
+  .hero__bg{ transform:none; }           /* avoid mobile rendering quirks */
+  .panel__media{ transform:none; }
+  .display{ font-size: clamp(28px, 8vw, 44px); }
+  .lead{ font-size: clamp(14px, 3.8vw, 18px); }
 }
 
 /* Square grid gallery */
