@@ -155,15 +155,15 @@ body {
   background: #000;
 }
 
-.hero__bg {
-  position: absolute;
-  inset: -8% -8% 0 -8%;
-  background-image: var(--img);
-  background-size: cover;
-  background-position: center 60%;
-  transform: translate3d(0, var(--hero-shift), 0) scale(1.05);
-  /* warm lift to match loaf tones */
-  filter: saturate(1.06) contrast(1.06) brightness(.9);
+.hero__bg{
+  position:absolute; inset:-8% -8% 0 -8%;
+  background-image:var(--img);
+  background-size:cover;
+  background-position:center 60%;
+  background-repeat:no-repeat;          /* ✅ never tile */
+  transform:translate3d(0,var(--hero-shift),0) scale(1.055);
+  will-change:transform;                 /* ✅ hint for smoother GPU render */
+  backface-visibility:hidden;
 }
 
 .hero__scrim {
@@ -367,14 +367,15 @@ body {
   color: #fff;
 }
 
-.panel__media {
-  position: absolute;
-  inset: -8% -8% -8% -8%;
-  background-image: var(--img);
-  background-size: cover;
-  background-position: top center;
-  transform: translate3d(0, var(--panel-shift), 0) scale(1.06);
-  filter: contrast(1.05) brightness(.88) saturate(1.04);
+.panel__media{
+  position:absolute; inset:-8% -8% -8% -8%;
+  background-image:var(--img);
+  background-size:cover;
+  background-position:center; 
+  background-repeat:no-repeat;          /* ✅ never tile */
+  transform:translate3d(0,var(--panel-shift),0) scale(1.06);
+  will-change:transform;
+  backface-visibility:hidden;
 }
 
 .panel__scrim {
