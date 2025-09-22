@@ -127,7 +127,7 @@ img{max-width:100%;display:block}
 
 /* Footer */
 .footer{ background:#fff; border-top:1px solid #ececf1; padding:26px 0; color:#6e6e73 }
-.footer__grid{ display:flex; flex-direction: column; align-items:center; gap:12px; }
+.footer__grid{ display:flex; flex-direction: column; align-items:center; gap:12px }
 .footer__brand{ display:flex; align-items:center; gap:10px; font-weight:700; color:#1c1c1f }
 .footer__nav{ display:flex; gap:14px; justify-content:center }
 .footer__nav a{ color:#3a3a3d; text-decoration:none; font-weight:600 }
